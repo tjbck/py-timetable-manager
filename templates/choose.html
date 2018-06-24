@@ -1,0 +1,41 @@
+{% extends "index.html" %} {% block index_content %}
+
+<form action="/submit" method="GET">
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">학년</span>
+            </div>
+            <input name="userGrade" class="form-control" type="text" value={{ userGrade }} readonly>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">수업 반</span>
+            </div>
+            <input name="userClass" class="form-control" type="text" value={{ userClass }} readonly>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">선택과목 선택</label>
+        <select name="userElectives" multiple class="form-control" id="exampleFormControlSelect2">
+            {% for class in userElectives %}
+            <option>{{ class }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="input-group mb-3" style="margin-top:30px">
+        <input name="username" type="text" class="form-control" placeholder="이름" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

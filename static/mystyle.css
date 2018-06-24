@@ -1,0 +1,24 @@
+/*
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='mystyle.css')}}">
+{% endblock %}
+
+
+body, html {
+    height: 100%;
+}
+.bg { 
+    background-image: url("https://images.unsplash.com/photo-1513849307423-3a1eb9e6235c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=573e5bb87e184c6dad25b4a5af5715dc&auto=format&fit=crop&w=1461&q=80");
+
+    height: 50%; 
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+*/
+
+.list-group-item, .list-group-item:hover{ z-index: auto; }

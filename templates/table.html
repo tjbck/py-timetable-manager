@@ -1,0 +1,48 @@
+{% extends "index.html" %} {% block index_content %}
+
+<div class="page-header">
+    <p class="text-center font-weight-bold">{{ username }}'s Electives</p>
+
+
+    <ul class="list-group list-group-flush">
+        {% for elective in userElectives %}
+        <li class="list-group-item">{{ elective }}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+<p class="text-center font-weight-bold">{{ username }}'s Class Timetable</p>
+<div class="container-fluid" style="margin-top:30px">
+    <table class="table">
+        <thead>
+            <tr>
+                {% for day in days %}
+                <th scope="col">{{ day }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(6) %}
+                <tr>
+                    <th scope="row">{{ i + 1 }}</th>
+                    {% for j in range(5) %}
+                        {% if userClassData[j][i]|length == 1 %}
+                            {% if userClassData[j][i][0] %}
+                                {% for value in userClassData[j][i] %}
+                                    <td>{{ value["subject"] }}<br/>{{ value["teacher"] }}</td>
+                                {% endfor %}
+                            {% else %}
+                                <td>공강</td>
+                            {% endif %}
+                        {% else %}
+                            <td>공강</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
