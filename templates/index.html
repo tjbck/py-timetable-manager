@@ -1,35 +1,38 @@
 {% extends "layout.html" %} {% block page_content %}
 
 <div class="page-header">
-
-    <h1 class="display-1">Hangaram High</h1>
-    <h1 class="display-4">Create Your Own "Class Timetable"!</h1>
-
+  <h1 class="display-4">Timetable Generator</h1>
 </div>
-
+<hr />
 <form action="/load" method="get">
-    <div class="input-group mb-3">
-        <select name="userGrade" class="custom-select my-1 mr-sm-2" id="inlineFormUserGrade">
-            <option selected>학년 선택</option>
-            <option value="1">1 학년</option>
-            <option value="2">2 학년</option>
-            <option value="3">3 학년</option>
-        </select>
-        <select name="userClass" class="custom-select my-1 mr-sm-2" id="inlineFormUserClass">
-            <option selected>수업반 선택</option>
-            <option value="1">1 반</option>
-            <option value="2">2 반</option>
-            <option value="3">3 반</option>
-            <option value="4">4 반</option>
-            <option value="5">5 반</option>
-            <option value="6">6 반</option>
-            <option value="7">7 반</option>
-            <option value="8">8 반</option>
-        </select>
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Load Data</button>
-        </div>
-    </div>
+  <div class="input-group mb-3">
+    <select
+      name="userGrade"
+      class="form-select"
+      id="inlineFormUserGrade"
+    >
+      <option selected>학년 선택</option>
+      <option value="1">1 학년</option>
+      <option value="2">2 학년</option>
+      <option value="3">3 학년</option>
+    </select>
+    <select
+      name="userClass"
+      class="form-select"
+      id="inlineFormUserClass"
+    >
+      <option selected>수업반 선택</option>
+      <option value="1">1 반</option>
+      <option value="2">2 반</option>
+      <option value="3">3 반</option>
+      <option value="4">4 반</option>
+      <option value="5">5 반</option>
+      <option value="6">6 반</option>
+      <option value="7">7 반</option>
+      <option value="8">8 반</option>
+    </select>
+    <button class="btn btn-outline-secondary" type="submit">Load Data</button>
+  </div>
 </form>
 
 {% block index_content %}{% endblock %}

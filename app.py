@@ -1,10 +1,8 @@
 from flask import Flask, redirect, render_template, request, abort
-from flask_bootstrap import Bootstrap
 
 import random
 
 app = Flask(__name__)
-Bootstrap(app)
 
 '''@app.before_request
 def before_request():
